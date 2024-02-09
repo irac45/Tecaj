@@ -1,4 +1,4 @@
- Ukloniti duplikate (u listi) u funkciji process_list koristeći 2 predefinirane funkcije """
+Ukloniti duplikate (u listi) u funkciji process_list koristeći 2 predefinirane funkcije """
 
 def find_duplicates (lst):
 """ funkcija koja trazi duplikate"""
