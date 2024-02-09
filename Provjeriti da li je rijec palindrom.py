@@ -1,21 +1,22 @@
- Provjeriti da li je rijec palindrom, ako je vrati True, ako nije vrati False.
-Provjeri da li je ulazni parametar string"""
+def palindrom(rijec):
+    # Provjeravamo je li rijec string
+    if not isinstance(rijec, str):
+        return False
+        
+    # Brišemo razmake i pretvaramo sve znakove u mala slova
+    rijec = rijec.replace(" ", "").lower()
+    # Provjeravamo je li rijec jednaka svojoj inverziji
+    return rijec == rijec[::-1]
 
-def je_palindrom(rijec):
+def main():
+    assert palindrom('kisik')
+    assert palindrom('a')
+    assert palindrom('')
+    assert palindrom('anavolimilovana')
+    assert palindrom(5) is False
+    assert palindrom('aa')
+    assert palindrom('ovo nije palindrom') is False
+    print("Implementacija je tocna!")
 
-"""
-Provjerava je li dana riječ palindrom.
-:param rijec: Riječ koja se provjerava.
-:return: True ako je palindrom, inače False.
-
-"""
-
-# Provjera je li ulazni parametar string
-if not isinstance(rijec, str):
-raise ValueError("Ulazni parametar mora biti string.")
-
-# Uklanjanje razmaka i pretvaranje u mala slova za dosljednost
-rijec = rijec.replace(" "").lower()
-
-# Provjeravanje jednakosti s obrnutim stringom
-return rijec == rijec[::-1]
+if __name__ == '__main__':
+    main()
